@@ -3,10 +3,6 @@ const express = require('express');
 const {Router} = express;
 const router = new Router();
 
-const user = require('./user');
-const session = require('./session');
-
-router.use('/api/users', user);
-router.use('/api/sessions', session);
+router.get('/api/test', (res) => res.sendStatus(200))
 
 module.exports = router;

@@ -1,34 +1,28 @@
 {
-  "name": "express-postgres-starter",
+  "name": "pocket-token-creator",
   "private": true,
   "version": "1.0.0",
-  "description": "Starter project using Express and Postgres",
-  "main": "config.js",
+  "description": "A lightweight OAuth integration with the Pocket API",
+  "main": "bin/start.js",
   "scripts": {
     "test": "xo",
     "lint": "xo",
     "format": "xo --fix",
     "start": "node ./bin/start.js",
-    "dev": "nodemon ./bin/start.js",
-    "migrate": "node ./bin/migrate.js",
-    "migrate:create": "migrate create --migrations-dir='./src/migrations'"
+    "dev": "nodemon ./bin/start.js"
   },
   "keywords": [
     "express",
-    "postgres"
+    "pocket"
   ],
   "author": "Hugo Di Francesco",
   "license": "MIT",
   "dependencies": {
-    "bcrypt": "^3.0.6",
+    "axios": "^0.18.0",
     "client-sessions": "^0.8.0",
     "express": "^4.16.4",
     "helmet": "^3.16.0",
-    "migrate": "^1.6.2",
-    "morgan": "^1.9.1",
-    "pg": "^7.9.0",
-    "sql-template-strings": "^2.2.2",
-    "uuid": "^3.3.2"
+    "morgan": "^1.9.1"
   },
   "devDependencies": {
     "nodemon": "^1.18.11",
@@ -37,13 +31,5 @@
   "xo": {
     "prettier": true,
     "space": true
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/HugoDF/express-postgres-starter.git"
-  },
-  "bugs": {
-    "url": "https://github.com/HugoDF/express-postgres-starter/issues"
-  },
-  "homepage": "https://github.com/HugoDF/express-postgres-starter#readme"
+  }
 }
