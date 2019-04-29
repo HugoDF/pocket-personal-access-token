@@ -1,5 +1,5 @@
 {
-  "name": "pocket-token-creator",
+  "name": "pocket-personal-access-token",
   "private": true,
   "version": "1.0.0",
   "description": "A lightweight OAuth integration with the Pocket API",
