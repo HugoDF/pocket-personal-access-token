@@ -33,7 +33,10 @@
   },
   "xo": {
     "prettier": true,
-    "space": true
+    "space": true,
+    "rules": {
+      "camelcase": 0
+    }
   },
   "nodemonConfig": {
     "ext": "js,html"

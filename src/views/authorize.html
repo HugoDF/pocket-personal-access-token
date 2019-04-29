@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+
+{% block title %}Foo{% endblock %}
+{% block description %}foo{% endblock %}
+
+{% block content %}
+<section class="w-full mx-auto mt-10 pt-10 max-w-sm">
+  <div class="bg-white shadow-md rounded px-8 pt-6 mb-4">
+    <p class="text-md inline-block">
+      To complete this step you'll be redirected to getpocket.com and will need to click "Authorise"
+    </p>
+    <div class="py-4 block">
+      <a
+        href="{{ pocketUrl }}"
+        class="bg-red hover:bg-red-dark text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+      >
+        Go
+      </a>
+    </div>
+  </div>
+</section>
+{% endblock %}

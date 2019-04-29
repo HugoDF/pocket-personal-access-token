@@ -3,25 +3,20 @@ const express = require('express');
 const morgan = require('morgan');
 const clientSession = require('client-sessions');
 const helmet = require('helmet');
+const nunjucks = require('nunjucks');
 
 const {SESSION_SECRET} = require('./config');
 
 const app = express();
 const pages = require('./src/pages');
 
-const nunjucks = require('nunjucks');
-
+app.use(express.static('public'));
+app.use(morgan('short'));
+app.use(express.urlencoded({extended: false}));
 nunjucks.configure('src/views', {
   autoescape: true,
   express: app
 });
-
-app.use(express.static('public'))
-
-app.get('/health', (req, res) => res.sendStatus(200));
-
-app.use(morgan('short'));
-app.use(express.json());
 app.use(
   clientSession({
     cookieName: 'session',
@@ -33,6 +28,9 @@ app.use(
 app.use(helmet());
 
 app.get('/', pages.initialisation);
+app.post('/addConsumerKey', pages.addConsumerKey);
+app.get('/authorize', pages.authorize);
+app.get('/callback', pages.callback);
 
 let server;
 module.exports = {
