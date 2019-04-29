@@ -7,9 +7,17 @@ const helmet = require('helmet');
 const {SESSION_SECRET} = require('./config');
 
 const app = express();
-const api = require('./src/api');
+const pages = require('./src/pages');
 
-app.get('/', (req, res) => res.sendStatus(200));
+const nunjucks = require('nunjucks');
+
+nunjucks.configure('src/views', {
+  autoescape: true,
+  express: app
+});
+
+app.use(express.static('public'))
+
 app.get('/health', (req, res) => res.sendStatus(200));
 
 app.use(morgan('short'));
@@ -21,9 +29,10 @@ app.use(
     duration: 24 * 60 * 60 * 1000
   })
 );
+
 app.use(helmet());
 
-app.use(api);
+app.get('/', pages.initialisation);
 
 let server;
 module.exports = {

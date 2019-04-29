@@ -9,7 +9,8 @@
     "lint": "xo",
     "format": "xo --fix",
     "start": "node ./bin/start.js",
-    "dev": "nodemon ./bin/start.js"
+    "dev": "nodemon ./bin/start.js",
+    "build": "tailwind build src/styles/app.css -o public/app.css -c tailwind.js --no-autoprefixer"
   },
   "keywords": [
     "express",
@@ -22,14 +23,19 @@
     "client-sessions": "^0.8.0",
     "express": "^4.16.4",
     "helmet": "^3.16.0",
-    "morgan": "^1.9.1"
+    "morgan": "^1.9.1",
+    "nunjucks": "^3.2.0"
   },
   "devDependencies": {
     "nodemon": "^1.18.11",
+    "tailwindcss": "^0.7.4",
     "xo": "^0.24.0"
   },
   "xo": {
     "prettier": true,
     "space": true
+  },
+  "nodemonConfig": {
+    "ext": "js,html"
   }
 }
