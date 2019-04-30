@@ -1,24 +1,25 @@
 {% extends "layout.html" %}
 
-{% block title %}Foo{% endblock %}
-{% block description %}foo{% endblock %}
+{% block title %}Success - Pocket Access Token{% endblock %}
+{% block description %}Successful Pocket Access Token{% endblock %}
 
 {% block content %}
 <section class="w-full mx-auto mt-10 pt-10 container">
   <div class="bg-white shadow-md rounded px-8 pt-6 mb-4">
-    <p class="text-md mb-4 inline-block">
-      Access Token: <code>{{ accessToken }}</code>
+    <h2 class="text-xl mb-4">Success!</h2>
+    <p class="text-md mb-6">
+      This is your Pocket access token: <code>{{ accessToken }}</code>
     </p>
     <section>
-      <label class="text-md font-normal mb-2 inline-block">Sample request</label>
+      <h3 class="text-md mb-4">Use it with a sample request</h3>
       <pre><code>curl --request GET \
   --url https://getpocket.com/v3/get \
   --header 'content-type: application/json' \
   --data '{
-	"consumer_key": "{{ consumerKey }}",
-	"access_token": "{{ accessToken}}"
-}'
-        </code>
+  "consumer_key": "{{ consumerKey }}",
+  "access_token": "{{ accessToken}}",
+  "count": 10
+}'</code>
       </pre>
     </section>
   </div>

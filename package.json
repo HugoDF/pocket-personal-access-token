@@ -8,6 +8,7 @@
     "test": "xo",
     "lint": "xo",
     "format": "xo --fix",
+    "prestart": "npm run build",
     "start": "node ./bin/start.js",
     "dev": "nodemon ./bin/start.js",
     "tw": "tailwind build src/styles/app.css -o public/app.css -c tailwind.js --no-autoprefixer",
