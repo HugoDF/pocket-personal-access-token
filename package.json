@@ -5,15 +5,15 @@
   "description": "A lightweight OAuth integration with the Pocket API",
   "main": "bin/start.js",
   "scripts": {
-    "test": "xo",
     "lint": "xo",
     "format": "xo --fix",
-    "prestart": "npm run build",
+    "prestart": "yarn build",
     "start": "node ./bin/start.js",
+    "predev": "yarn tw",
     "dev": "nodemon ./bin/start.js",
-    "tw": "tailwind build src/styles/app.css -o public/app.css -c tailwind.js --no-autoprefixer",
+    "tw": "tailwind build src/styles/app.css -o public/app.css ",
     "purge": "purgecss --css ./public/app.css -o ./public --content src/views/**/*.html",
-    "build": "npm run tw && npm run purge"
+    "build": "yarn tw && yarn purge"
   },
   "keywords": [
     "express",
@@ -32,7 +32,7 @@
   },
   "devDependencies": {
     "nodemon": "^1.18.11",
-    "tailwindcss": "^0.7.4",
+    "tailwindcss": "^1.0",
     "xo": "^0.24.0"
   },
   "xo": {
