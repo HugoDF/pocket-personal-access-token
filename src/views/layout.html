@@ -14,12 +14,18 @@
   <link rel="stylesheet" href="app.css">
 </head>
 
-<body>
+<body class="flex min-h-screen flex-col">
   <!--[if IE]>
     <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
   <![endif]-->
 
   {% block content %}{% endblock %}
+
+  <footer class="max-w-lg text-sm my-auto mb-10 py-10 px-10 mx-auto">
+    <p class="mb-1 leading-relaxed">This site uses encrypted cookies to store relevant information (consumer key, request token) while authenticating with Pocket.</p>
+    <p class="mb-1 leading-relaxed">We run on <a class="text-blue-500 hover:text-blue-700" href="https://glitch.com">Glitch.com</a>, you can audit the full source at <a class="text-blue-500 hover:text-blue-700" href="https://glitch.com/edit/#!/pocket-personal-access-token">https://glitch.com/edit/#!/pocket-personal-access-token</a></p>
+    <p class="leading-relaxed">The code is also available on GitHub at <a class="text-blue-500 hover:text-blue-700" href="https://github.com/HugoDF/pocket-personal-access-token">github.com/HugoDF/pocket-personal-access-token</a></p>
+  </footer>
   <script async defer src="https://cdn.simpleanalytics.io/hello.js"></script>
   <noscript><img src="https://api.simpleanalytics.io/hello.gif" alt=""></noscript>
 </body>
