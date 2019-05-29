@@ -14,7 +14,6 @@ async function getRequestToken(consumerKey) {
     consumer_key: consumerKey,
     redirect_uri: REDIRECT_URI
   });
-  console.log(res.data);
   const {code} = res.data;
   return code;
 }

@@ -5,6 +5,5 @@ module.exports = async function(req, res) {
   const requestToken = await pocket.getRequestToken(consumer_key);
   req.session.consumer_key = consumer_key;
   req.session.request_token = requestToken;
-  console.log(requestToken);
   return res.redirect('/authorize');
 };
